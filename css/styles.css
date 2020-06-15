@@ -1,0 +1,8 @@
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.checked {
+  color: gray;
+  text-decoration: line-through;
+}

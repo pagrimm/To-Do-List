@@ -39,19 +39,28 @@ ToDoList.prototype.deleteToDo = function(id)  {
 let toDoList = new ToDoList();
 
 function displayToDoList(checklistToDisplay) {
-  let displayList = $("ul#output");
+  let displayList = $("div#output");
   let htmlForListInfo = '';
   checklistToDisplay.list.forEach(function(toDo)  {
-    htmlForListInfo += "<li id=" + toDo.id + "><input type=\"checkbox\">" + toDo.activity + "</li>";
+    htmlForListInfo += "<div><input type=\"checkbox\" id=" + toDo.id + ">" + toDo.activity + "</div>";
   });
   displayList.html(htmlForListInfo);
 };
 
+function attachListeners() {
+  $("div#output").on("change", "input", function(){
+    toDoList.deleteToDo(this.id);
+    $(this).parent().addClass("checked");
+    $(this).prop("disabled", true);
+  });
+}
+
 $(document).ready(function()  {
+  attachListeners();
   $("form").submit(function(event)  {
     event.preventDefault();
     const inputtedActivity = $("input").val();
-    $("input").val() = "";
+    $("input").val("");
     let newActivity = new ToDo(inputtedActivity);
     toDoList.addToDo(newActivity);
     displayToDoList(toDoList);
