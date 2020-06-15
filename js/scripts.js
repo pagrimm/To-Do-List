@@ -32,10 +32,28 @@ ToDoList.prototype.deleteToDo = function(id)  {
   return false;
 }
 
+
+
 // User Interface
+
+let toDoList = new ToDoList();
+
+function displayToDoList(checklistToDisplay) {
+  let displayList = $("ul#output");
+  let htmlForListInfo = '';
+  checklistToDisplay.list.forEach(function(toDo)  {
+    htmlForListInfo += "<li id=" + toDo.id + "><input type=\"checkbox\">" + toDo.activity + "</li>";
+  });
+  displayList.html(htmlForListInfo);
+};
+
 $(document).ready(function()  {
   $("form").submit(function(event)  {
     event.preventDefault();
-    
-  } )
+    const inputtedActivity = $("input").val();
+    $("input").val() = "";
+    let newActivity = new ToDo(inputtedActivity);
+    toDoList.addToDo(newActivity);
+    displayToDoList(toDoList);
+  })
 })
