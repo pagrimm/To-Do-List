@@ -22,7 +22,15 @@ ToDoList.prototype.assignId = function()  {
 //   }
 //   return false;
 // };
-
+ToDoList.prototype.deleteToDo = function(id)  {
+  for (let i=0; i<this.list.length; i++)  {
+    if (this.list[i].id == id)  {
+      this.list.splice(i, 1);
+      return true;
+    }
+  }
+  return false;
+}
 
 // User Interface
 $(document).ready(function()  {
