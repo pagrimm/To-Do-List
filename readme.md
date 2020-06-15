@@ -1,12 +1,22 @@
-# _Project Title_
+# _To Do List_
 
-#### _Description, Date_
+#### _A To-Do-List that creates a checklist, 6.15.2020_
 
-#### By _**Taylor Phillips**_
+#### By _**Taylor Phillips and Peter Grimm**_
 
 ## Description
 
-_Detailed description of the application_
+A page that creates a to-do list that you can check-off, created as an exercise to practce using objects, constructors, prototype methods, and event delegation/bubbling.
+
+
+## Applicaiton Specs
+
+| Behavior                                                                            	| Input                  	| Output                                           	|   	|   	|
+|-------------------------------------------------------------------------------------	|------------------------	|--------------------------------------------------	|---	|---	|
+| User can add things to do                                                           	| Mow the lawn           	| {todo: "Mow the lawn"}                           	|   	|   	|
+| The application displays a list of things to do from the input provided             	| Mow the lawn ... sleep 	| Mow the lawn, feed the dog, shower, shave, sleep 	|   	|   	|
+| Users can check off when things are done and the item will be removed from the list 	| [x] Mow the lawn       	| feed the dog, shower, shave, sleep               	|   	|   	|
+
 
 ## Setup/Installation Requirements
 
@@ -40,4 +50,4 @@ _VSCode_
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2020 **_Taylor Phillips_**
+Copyright (c) 2020 **_Taylor Phillips and Peter Grimm_**
